@@ -117,6 +117,14 @@ namespace TFG.PWManager.BackEnd.Application.Registration
             }
         }
 
+        public static string JwtAuthType
+        {
+            get
+            {
+                return Configuration != null ? Configuration[$"JwtSettings{Separator}AuthType"] : string.Empty;
+            }
+        }
+
         public static string JwtAudience
         {
             get
