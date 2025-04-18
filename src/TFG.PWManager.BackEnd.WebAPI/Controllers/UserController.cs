@@ -27,12 +27,7 @@ namespace TFG.PWManager.BackEnd.WebAPI.Controllers
         /// </summary>
         /// <param name="userId">Identificador del usuario</param>
         /// <returns>Usuario</returns>
-        /// <response code="200">Operación ejecutada con éxito.</response>
-        /// <response code="401">Se lanzará esta respuesta cuando la autorización haya sido denegada.</response>
-        /// <response code="403">Se lanzará esta respuesta cuando el acceso al recurso esté prohibido.</response>
-        /// <response code="404">Se lanzará esta respuesta cuando los datos de la request no hayan sido encontrados.</response>
-        /// <response code="500">Se lanzará esta respuesta cuando el servidor sea incapaz de procesar la petición.</response>
-        /// <response code="503">Se lanzará esta respuesta cuando el servicio no esté disponible.</response>
+        /// <include file='docs_tags.xml' path='docs/tags[@name="getById"]/*' />
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserModel))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(HttpResponseException))]
         [ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(HttpResponseException))]
@@ -54,12 +49,7 @@ namespace TFG.PWManager.BackEnd.WebAPI.Controllers
         /// </summary>
         /// <param name="user">Datos del usuario</param>
         /// <returns>Identificador del usuario</returns>
-        /// <response code="200">Operación ejecutada con éxito.</response>
-        /// <response code="400">Se lanzará esta respuesta cuando los datos de la request no sean correctos.</response>
-        /// <response code="401">Se lanzará esta respuesta cuando la autorización haya sido denegada.</response>
-        /// <response code="403">Se lanzará esta respuesta cuando el acceso al recurso esté prohibido.</response>
-        /// <response code="500">Se lanzará esta respuesta cuando el servidor sea incapaz de procesar la petición.</response>
-        /// <response code="503">Se lanzará esta respuesta cuando el servicio no esté disponible.</response>
+        /// <include file='docs_tags.xml' path='docs/tags[@name="create"]/*' />
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OkResponseModel))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(HttpResponseException))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(HttpResponseException))]
@@ -81,13 +71,7 @@ namespace TFG.PWManager.BackEnd.WebAPI.Controllers
         /// <param name="userId">Identificador del usuario</param>
         /// <param name="user">Datos del usuario</param>
         /// <returns>Identificador del usuario</returns>
-        /// <response code="200">Operación ejecutada con éxito.</response>
-        /// <response code="400">Se lanzará esta respuesta cuando los datos de la request no sean correctos.</response>
-        /// <response code="401">Se lanzará esta respuesta cuando la autorización haya sido denegada.</response>
-        /// <response code="403">Se lanzará esta respuesta cuando el acceso al recurso esté prohibido.</response>
-        /// <response code="404">Se lanzará esta respuesta cuando los datos de la request no hayan sido encontrados.</response>
-        /// <response code="500">Se lanzará esta respuesta cuando el servidor sea incapaz de procesar la petición.</response>
-        /// <response code="503">Se lanzará esta respuesta cuando el servicio no esté disponible.</response>
+        /// <include file='docs_tags.xml' path='docs/tags[@name="modify"]/*' />
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OkResponseModel))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(HttpResponseException))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(HttpResponseException))]
@@ -109,13 +93,7 @@ namespace TFG.PWManager.BackEnd.WebAPI.Controllers
         /// </summary>
         /// <param name="user">Datos del usuario</param>
         /// <returns>Identificador del usuario</returns>
-        /// <response code="200">Operación ejecutada con éxito.</response>
-        /// <response code="400">Se lanzará esta respuesta cuando los datos de la request no sean correctos.</response>
-        /// <response code="401">Se lanzará esta respuesta cuando la autorización haya sido denegada.</response>
-        /// <response code="403">Se lanzará esta respuesta cuando el acceso al recurso esté prohibido.</response>
-        /// <response code="404">Se lanzará esta respuesta cuando los datos de la request no hayan sido encontrados.</response>
-        /// <response code="500">Se lanzará esta respuesta cuando el servidor sea incapaz de procesar la petición.</response>
-        /// <response code="503">Se lanzará esta respuesta cuando el servicio no esté disponible.</response>
+        /// <include file='docs_tags.xml' path='docs/tags[@name="modify"]/*' />  
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OkResponseModel))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(HttpResponseException))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(HttpResponseException))]
@@ -137,13 +115,7 @@ namespace TFG.PWManager.BackEnd.WebAPI.Controllers
         /// </summary>
         /// <param name="userId">Identificador del usuario</param>
         /// <returns>Identificador del usuario</returns>
-        /// <response code="200">Operación ejecutada con éxito.</response>
-        /// <response code="400">Se lanzará esta respuesta cuando los datos de la request no sean correctos.</response>
-        /// <response code="401">Se lanzará esta respuesta cuando la autorización haya sido denegada.</response>
-        /// <response code="403">Se lanzará esta respuesta cuando el acceso al recurso esté prohibido.</response>
-        /// <response code="404">Se lanzará esta respuesta cuando los datos de la request no hayan sido encontrados.</response>
-        /// <response code="500">Se lanzará esta respuesta cuando el servidor sea incapaz de procesar la petición.</response>
-        /// <response code="503">Se lanzará esta respuesta cuando el servicio no esté disponible.</response>
+        /// <include file='docs_tags.xml' path='docs/tags[@name="modify"]/*' />
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OkResponseModel))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(HttpResponseException))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(HttpResponseException))]
