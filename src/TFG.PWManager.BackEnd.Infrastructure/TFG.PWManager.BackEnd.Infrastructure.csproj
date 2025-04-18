@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Context\Mappings\" />
     <Folder Include="Persistence\" />
   </ItemGroup>
 

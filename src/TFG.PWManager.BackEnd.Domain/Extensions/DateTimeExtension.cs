@@ -1,4 +1,5 @@
-﻿using TFG.PWManager.BackEnd.Domain.Enums;
+﻿using System.Globalization;
+using TFG.PWManager.BackEnd.Domain.Enums;
 using TimeZoneConverter;
 
 namespace TFG.PWManager.BackEnd.Domain.Extensions
@@ -30,6 +31,16 @@ namespace TFG.PWManager.BackEnd.Domain.Extensions
                 string tzAux = TZConvert.IanaToWindows(tzId);
                 return TimeZoneInfo.FindSystemTimeZoneById(tzAux);
             }
+        }
+
+        public static string DateToString(this DateTime dt, string format, string? tzSourceId = DateTimeEnum.Utc, string? tzTargetId = DateTimeEnum.Utc)
+        {
+            return dt.ConvertDateTime(tzSourceId, tzTargetId).ToString(format);
+        }
+
+        public static DateTime StringToDate(this string dt, string format, string? tzSourceId = DateTimeEnum.Utc, string? tzTargetId = DateTimeEnum.Utc)
+        {
+            return DateTime.ParseExact(dt, format, CultureInfo.InvariantCulture).ConvertDateTime(tzSourceId, tzTargetId);
         }
     }
 }
