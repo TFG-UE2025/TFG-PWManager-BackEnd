@@ -18,7 +18,8 @@
   <ItemGroup>
     <ProjectReference Include="..\TFG.PWManager.BackEnd.Domain\TFG.PWManager.BackEnd.Domain.csproj" />
     <ProjectReference Include="..\TFG.PWManager.BackEnd.Application\TFG.PWManager.BackEnd.Application.csproj" />
-    <ProjectReference Include="..\TFG.PWManager.BackEnd.Business\TFG.PWManager.BackEnd.Business.csproj" />
+	  <ProjectReference Include="..\TFG.PWManager.BackEnd.Business\TFG.PWManager.BackEnd.Business.csproj" />
+	  <ProjectReference Include="..\TFG.PWManager.BackEnd.Hash\TFG.PWManager.BackEnd.Hash.csproj" />
   </ItemGroup>
 
 </Project>

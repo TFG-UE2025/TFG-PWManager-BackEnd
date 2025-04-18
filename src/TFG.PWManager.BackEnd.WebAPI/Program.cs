@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using TFG.PWManager.BackEnd.Application.Registration;
 using TFG.PWManager.BackEnd.Business.Registration;
+using TFG.PWManager.BackEnd.Hash.Registration;
 using TFG.PWManager.BackEnd.WebAPI.Builders;
 using TFG.PWManager.BackEnd.WebAPI.Handlers;
 using TFG.PWManager.BackEnd.WebAPI.Middleware.CurrentUser;
@@ -30,8 +31,9 @@ builder.Services.AddCors(options =>
 builder.Services.AddFluentValidationAutoValidation()
     .AddFluentValidationClientsideAdapters();
 
-builder.Services.AddBusinessServices();
+builder.Services.AddBusinessServices(); 
 builder.Services.AddApplicationServices(builder.Configuration);
+builder.Services.AddHashServices();
 builder.Services.AddSwaggerServices();
 
 
