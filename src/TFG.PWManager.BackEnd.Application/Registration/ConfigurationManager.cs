@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.Diagnostics.CodeAnalysis;
+using TFG.PWManager.BackEnd.Domain.Models;
 
 namespace TFG.PWManager.BackEnd.Application.Registration
 {
@@ -147,5 +148,14 @@ namespace TFG.PWManager.BackEnd.Application.Registration
 
         #endregion Swagger
 
+        #region ConfigAuditUserKeyModel
+        public static ConfigAuditUserKeyModel ConfigAuditUserKey
+        {
+            get
+            {
+                return Configuration != null ? Configuration.GetSection("ConfigAuditUserKey").Get<ConfigAuditUserKeyModel>() : new ConfigAuditUserKeyModel();
+            }
+        }
+        #endregion ConfigAuditUserKeyModel
     }
 }

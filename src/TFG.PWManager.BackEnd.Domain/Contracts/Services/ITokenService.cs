@@ -14,8 +14,6 @@ namespace TFG.PWManager.BackEnd.Domain.Contracts.Services
 
         Task<OkResponseModel> InvalidateTokenByEmail(string email);
 
-        Task<OkResponseModel> InvalidateTokenByRol(int idRol);
-
         Task<bool> GetEnabledToken(string email);
     }
 }
