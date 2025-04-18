@@ -14,6 +14,7 @@ namespace TFG.PWManager.BackEnd.Infrastructure.Context.Mappings
             builder.Property(e => e.AccessToken).HasColumnName("AccessToken");
             builder.Property(e => e.Email).HasColumnName("Email");
             builder.Property(e => e.ExpiredDate).HasColumnName("ExpiredDate");
+            builder.Property(e => e.Enabled).HasColumnName("Enabled");
         }
     }
 }
