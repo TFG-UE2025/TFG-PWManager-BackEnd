@@ -1,7 +1,11 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using TFG.PWManager.BackEnd.Application.Features.User.Commands;
 using TFG.PWManager.BackEnd.Application.Features.User.Queries;
+using TFG.PWManager.BackEnd.Domain.Contracts.Persistence;
+using TFG.PWManager.BackEnd.Domain.Exceptions;
 using TFG.PWManager.BackEnd.Domain.Models;
+using TFG.PWManager.BackEnd.Domain.Resources;
 
 namespace TFG.PWManager.BackEnd.Application.Features.User
 {
@@ -10,43 +14,65 @@ namespace TFG.PWManager.BackEnd.Application.Features.User
        IRequestHandler<CreateUserCommand, OkResponseModel>,
        IRequestHandler<UpdateUserCommand, OkResponseModel>,
        IRequestHandler<DeleteUserCommand, OkResponseModel>,
-       IRequestHandler<ChangeUserPasswordCommand, OkResponseModel>,
-       IRequestHandler<GetThreeLastsUserKeysByUserIdQuery, IEnumerable<UserKeyModel>>,
-       IRequestHandler<GetLastUserKeyByUserIdQuery, UserKeyModel>
+       IRequestHandler<ChangeUserPasswordCommand, OkResponseModel>
     {
-        public Task<UserModel> Handle(GetUserByEmailQuery request, CancellationToken cancellationToken)
+        private readonly IUserRepository _userRepository;
+        private readonly IMapper _mapper;
+
+        public UserHandler(IUserRepository userRepository, IMapper mapper)
         {
-            throw new NotImplementedException();
+            _userRepository = userRepository;
+            _mapper = mapper;
         }
 
-        public Task<OkResponseModel> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+        public async Task<UserModel> Handle(GetUserByEmailQuery request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var user = await _userRepository.GetUserByEmailAsync(request.Email);
+            return _mapper.Map<UserModel>(user);
         }
 
-        public Task<OkResponseModel> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
+        public async Task<OkResponseModel> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var entity = _mapper.Map<Domain.Entities.User>(request.Model);            
+            entity.Enabled = true;
+
+            return await _userRepository.AddUserAsync(entity);
         }
 
-        public Task<OkResponseModel> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
+        public async Task<OkResponseModel> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var entity = await _userRepository.GetUserByIdAsync(request.Id);
+
+            if (entity == null)
+            {
+                throw new NotFoundException(ExceptionsMessages.NullEntity);
+            }
+
+            request.Model.PasswordHash = entity.PasswordHash;
+
+            _mapper.Map(request.Model, entity);
+            
+            return await _userRepository.UpdateUserAsync(entity);
         }
 
-        public Task<OkResponseModel> Handle(ChangeUserPasswordCommand request, CancellationToken cancellationToken)
+        public async Task<OkResponseModel> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            //TODO: controlar Si quiere elimeinar la cuenta 
+            var entity = await _userRepository.GetUserByIdAsync(request.Id) ?? throw new NotFoundException(ExceptionsMessages.NullEntity);
+                        
+            entity.Enabled = false;            
+
+            return await _userRepository.DeleteUserAsync(entity, true);
         }
 
-        public Task<IEnumerable<UserKeyModel>> Handle(GetThreeLastsUserKeysByUserIdQuery request, CancellationToken cancellationToken)
+        public async Task<OkResponseModel> Handle(ChangeUserPasswordCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var entity = await _userRepository.GetUserByIdAsync(request.Id) ?? throw new NotFoundException(ExceptionsMessages.NullEntity);
+
+            entity.PasswordHash = request.newPassword;
+
+            return await _userRepository.UpdateUserAsync(entity);
         }
 
-        public Task<UserKeyModel> Handle(GetLastUserKeyByUserIdQuery request, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

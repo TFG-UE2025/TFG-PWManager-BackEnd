@@ -22,7 +22,7 @@ namespace TFG.PWManager.BackEnd.Domain.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ExceptionsMessages {
+    public class ExceptionsMessages {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace TFG.PWManager.BackEnd.Domain.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TFG.PWManager.BackEnd.Domain.Resources.ExceptionsMessages", typeof(ExceptionsMessages).Assembly);
@@ -51,7 +51,7 @@ namespace TFG.PWManager.BackEnd.Domain.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,63 @@ namespace TFG.PWManager.BackEnd.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to El campo {0} no puede estar vacío.
+        /// </summary>
+        public static string EmptyProperty {
+            get {
+                return ResourceManager.GetString("EmptyProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El campo {0} tiene un formato incorrecto.
+        /// </summary>
+        public static string FormatProperty {
+            get {
+                return ResourceManager.GetString("FormatProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El campo {0} no puede superar los {1} caracteres.
+        /// </summary>
+        public static string MaxLengthProperty {
+            get {
+                return ResourceManager.GetString("MaxLengthProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La entidad no existe.
+        /// </summary>
+        public static string NullEntity {
+            get {
+                return ResourceManager.GetString("NullEntity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No se ha informado un módelo de entrada.
+        /// </summary>
+        public static string NullModel {
+            get {
+                return ResourceManager.GetString("NullModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El campo {0} no puede ser nulo.
+        /// </summary>
+        public static string NullProperty {
+            get {
+                return ResourceManager.GetString("NullProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to La operación indicada no está definida.
         /// </summary>
-        internal static string OperatorExceptionMsg {
+        public static string OperatorExceptionMsg {
             get {
                 return ResourceManager.GetString("OperatorExceptionMsg", resourceCulture);
             }
@@ -72,7 +126,7 @@ namespace TFG.PWManager.BackEnd.Domain.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Hay uno o varios errores de validación.
         /// </summary>
-        internal static string ValidationExceptionMsg {
+        public static string ValidationExceptionMsg {
             get {
                 return ResourceManager.GetString("ValidationExceptionMsg", resourceCulture);
             }

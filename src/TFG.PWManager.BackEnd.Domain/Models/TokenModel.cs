@@ -1,8 +1,9 @@
 ﻿using Swashbuckle.AspNetCore.Annotations;
+using TFG.PWManager.BackEnd.Domain.Commons;
 
 namespace TFG.PWManager.BackEnd.Domain.Models
 {
-    public class TokenModel
+    public class TokenModel: BaseModel
     {
         [SwaggerSchema(Description = "No maximum size")]
         public string? AccessToken { get; set; }

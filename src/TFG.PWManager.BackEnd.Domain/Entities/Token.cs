@@ -10,7 +10,5 @@ namespace TFG.PWManager.BackEnd.Domain.Entities
         public DateTime ExpiredDate { get; set; }
 
         public bool IsRefreshToken { get; set; }
-
-        public bool Enabled { get; set; }
     }
 }
