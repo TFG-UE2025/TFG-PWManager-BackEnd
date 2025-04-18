@@ -9,11 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1F019621-7A89-4E72-8907-171D82EAF118}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFG.PWManager.BackEnd.Domain", "src\TFG.PWManager.BackEnd.Domain\TFG.PWManager.BackEnd.Domain.csproj", "{18606525-0838-438D-96D1-1FD1D1E88C43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TFG.PWManager.BackEnd.Domain", "src\TFG.PWManager.BackEnd.Domain\TFG.PWManager.BackEnd.Domain.csproj", "{18606525-0838-438D-96D1-1FD1D1E88C43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFG.PWManager.BackEnd.Business", "src\TFG.PWManager.BackEnd.Business\TFG.PWManager.BackEnd.Business.csproj", "{54606A86-D020-49BA-8484-13B3F3B38307}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TFG.PWManager.BackEnd.Business", "src\TFG.PWManager.BackEnd.Business\TFG.PWManager.BackEnd.Business.csproj", "{54606A86-D020-49BA-8484-13B3F3B38307}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFG.PWManager.BackEnd.Application", "src\TFG.PWManager.BackEnd.Application\TFG.PWManager.BackEnd.Application.csproj", "{CEFFB5C1-D644-4FC0-8FAA-47990E2BDC60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TFG.PWManager.BackEnd.Application", "src\TFG.PWManager.BackEnd.Application\TFG.PWManager.BackEnd.Application.csproj", "{CEFFB5C1-D644-4FC0-8FAA-47990E2BDC60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{DB19FB8C-23C9-474E-90D0-9B95312B9A7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFG.PWManager.BackEnd.Hash", "src\TFG.PWManager.BackEnd.Hash\TFG.PWManager.BackEnd.Hash.csproj", "{FE36F131-18A2-406A-BDB3-4D475AF5D6D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFG.PWManager.BackEnd.Jwt", "src\TFG.PWManager.BackEnd.Jwt\TFG.PWManager.BackEnd.Jwt.csproj", "{4D53065E-D662-460A-A4A5-AD42DF4153D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +43,14 @@ Global
 		{CEFFB5C1-D644-4FC0-8FAA-47990E2BDC60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEFFB5C1-D644-4FC0-8FAA-47990E2BDC60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEFFB5C1-D644-4FC0-8FAA-47990E2BDC60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE36F131-18A2-406A-BDB3-4D475AF5D6D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE36F131-18A2-406A-BDB3-4D475AF5D6D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE36F131-18A2-406A-BDB3-4D475AF5D6D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE36F131-18A2-406A-BDB3-4D475AF5D6D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D53065E-D662-460A-A4A5-AD42DF4153D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D53065E-D662-460A-A4A5-AD42DF4153D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D53065E-D662-460A-A4A5-AD42DF4153D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D53065E-D662-460A-A4A5-AD42DF4153D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +60,8 @@ Global
 		{18606525-0838-438D-96D1-1FD1D1E88C43} = {1F019621-7A89-4E72-8907-171D82EAF118}
 		{54606A86-D020-49BA-8484-13B3F3B38307} = {1F019621-7A89-4E72-8907-171D82EAF118}
 		{CEFFB5C1-D644-4FC0-8FAA-47990E2BDC60} = {1F019621-7A89-4E72-8907-171D82EAF118}
+		{FE36F131-18A2-406A-BDB3-4D475AF5D6D2} = {DB19FB8C-23C9-474E-90D0-9B95312B9A7A}
+		{4D53065E-D662-460A-A4A5-AD42DF4153D2} = {DB19FB8C-23C9-474E-90D0-9B95312B9A7A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2157C487-D51F-4314-89C1-69C0159B62FB}

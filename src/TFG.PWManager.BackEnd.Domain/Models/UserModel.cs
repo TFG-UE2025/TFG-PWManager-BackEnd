@@ -32,5 +32,7 @@ namespace TFG.PWManager.BackEnd.Domain.Models
         public string? LanguageCode { get; set; }
 
         public DateTime? PasswordExpiredDate { get; set; }
+
+        public IEnumerable<RoleModel>? Roles { get; set; }
     }
 }
