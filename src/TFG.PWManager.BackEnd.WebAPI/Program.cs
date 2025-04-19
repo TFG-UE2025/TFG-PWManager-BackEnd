@@ -93,6 +93,6 @@ app.AddSwaggerApp();
 
 
 
-//app.MapControllers();
+app.MapControllers();
 
 app.Run();

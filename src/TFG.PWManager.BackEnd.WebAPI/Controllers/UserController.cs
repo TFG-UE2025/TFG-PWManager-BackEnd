@@ -58,7 +58,7 @@ namespace TFG.PWManager.BackEnd.WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status503ServiceUnavailable, Type = typeof(HttpResponseException))]
         [Produces("application/json")]
         [HttpPost]
-        [Authorize]
+        //[Authorize]
         [Route("")]
         public async Task<IActionResult> CreateUser([FromBody] UserModel user)
         {

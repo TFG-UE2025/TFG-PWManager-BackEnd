@@ -16,6 +16,7 @@ namespace TFG.PWManager.BackEnd.Infrastructure.Registration
             services.AddDbContext<PWManagerDbContext>(options => options.UseSqlServer(Application.Registration.ConfigurationManager.CurrentDB));
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ITokenRepository, TokenRepository>();
 
             return services;
 
